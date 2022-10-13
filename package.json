@@ -1,0 +1,30 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Projeto #7 do curso completo de JavaScript - Jonas Schmedtmann",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luciana-Santos/forkify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luciana-Santos/forkify/issues"
+  },
+  "homepage": "https://github.com/Luciana-Santos/forkify#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0",
+    "sass": "^1.55.0",
+    "url": "^0.11.0"
+  },
+  "dependencies": {
+    "core-js": "^3.25.5",
+    "regenerator-runtime": "^0.13.10"
+  }
+}
