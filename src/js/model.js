@@ -14,7 +14,7 @@ export const state = {
 export const loadRecipe = async function (id) {
   try {
     const data = await getJSON(
-      `${API_URL}/${id}?key=3d848a71-41c8-4c6c-97d8-e5e0132228c2`,
+      `${API_URL}/${id}?key=93bef63a-1cb0-4776-a0d9-3d4cab87dfa9`,
     );
 
     const { recipe } = data.data;
@@ -37,7 +37,7 @@ export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
     const data = await getJSON(
-      `${API_URL}?search=${query}&key=3d848a71-41c8-4c6c-97d8-e5e0132228c2`,
+      `${API_URL}?search=${query}&key=93bef63a-1cb0-4776-a0d9-3d4cab87dfa9`,
     );
 
     state.search.results = data.data.recipes.map((rec) => {
@@ -61,4 +61,13 @@ export const getSearchResultsPage = function (page = state.search.page) {
   const end = page * state.search.resultsPerPage; // 9
 
   return state.search.results.slice(start, end);
+};
+
+export const updateServings = function (newServings) {
+  state.recipe.ingredients.forEach((ing) => {
+    // newQt = oldQt * newServings / oldServings
+    ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
+  });
+
+  state.recipe.servings = newServings;
 };
