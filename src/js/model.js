@@ -92,5 +92,5 @@ export const deleteBookmark = function (id) {
   state.bookmarks.splice(index, 1);
 
   // mark current recipe as not bookmarked
-  if (id === state.recipe.id) state.recipe.bookmarked = true;
+  if (id === state.recipe.id) state.recipe.bookmarked = false;
 };
