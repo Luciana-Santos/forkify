@@ -3,12 +3,15 @@ import icons from 'url:../../img/icons.svg';
 export default class View {
   _data;
 
-  render(data) {
+  render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
     this._data = data;
     const markut = this._generateMarkup();
+
+    if (!render) return markut;
+
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markut);
   }
