@@ -75,7 +75,11 @@ class RecipeView extends View {
             </button>
           </div>
         </div>
-        <div class="recipe__user-generated"></div>
+        <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
+          <svg>
+            <use href="${icons}#icon-user"></use>
+          </svg>
+        </div>
         <button class="btn--round btn--bookmark">
           <svg class="">
             <use href="${icons}#icon-bookmark${
@@ -117,7 +121,7 @@ class RecipeView extends View {
     return `
       <li class="recipe__ingredient">
         <svg class="recipe__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="${icons}#icon-check"></use>
         </svg>
         <div class="recipe__quantity">${
           ing.quantity ? new Fraction(ing.quantity).toString() : ''
