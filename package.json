@@ -4,7 +4,7 @@
   "description": "Projeto #7 do curso completo de JavaScript - Jonas Schmedtmann",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build --public-url . index.html"
   },
   "repository": {
     "type": "git",
